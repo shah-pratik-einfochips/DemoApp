@@ -3,10 +3,9 @@ import LoginKit
 
 struct ContentView: View {
     @EnvironmentObject var settings: AppSettings
-    @State private var isLoggedIn = false
 
     var body: some View {
-        if isLoggedIn {
+        if settings.isLoggedIn {
             NavigationStack {
                 SettingsView()
             }
@@ -17,8 +16,9 @@ struct ContentView: View {
         } else {
             LoginView(
                 onSuccess: { credentials in
+                    settings.loggedInEmail = credentials.email
                     withAnimation(.easeInOut(duration: 0.4)) {
-                        isLoggedIn = true
+                        settings.isLoggedIn = true
                     }
                 },
                 onFailure: { error in

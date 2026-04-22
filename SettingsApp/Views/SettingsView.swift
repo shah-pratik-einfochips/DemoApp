@@ -3,6 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject var settings: AppSettings
     @State private var showResetAlert = false
+    @State private var showLogoutAlert = false
 
     var body: some View {
         List {
@@ -14,6 +15,7 @@ struct SettingsView: View {
             generalSection
             aboutSection
             resetSection
+            logoutSection
         }
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.large)
@@ -22,6 +24,16 @@ struct SettingsView: View {
             Button("Cancel", role: .cancel) {}
         } message: {
             Text("This will restore all settings to their default values.")
+        }
+        .alert("Sign Out", isPresented: $showLogoutAlert) {
+            Button("Sign Out", role: .destructive) {
+                withAnimation(.easeInOut(duration: 0.4)) {
+                    settings.logout()
+                }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Are you sure you want to sign out of \(settings.loggedInEmail)?")
         }
     }
 
@@ -39,7 +51,7 @@ struct SettingsView: View {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Pratik Shah")
                         .font(.headline)
-                    Text("pratik@example.com")
+                    Text(settings.loggedInEmail)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -182,6 +194,31 @@ struct SettingsView: View {
                     Text("Reset All Settings")
                         .fontWeight(.semibold)
                     Spacer()
+                }
+            }
+        }
+    }
+
+    private var logoutSection: some View {
+        Section {
+            Button(role: .destructive) {
+                showLogoutAlert = true
+            } label: {
+                HStack(spacing: 12) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                            .fill(Color.red.gradient)
+                            .frame(width: 32, height: 32)
+                        Image(systemName: "rectangle.portrait.and.arrow.right")
+                            .font(.system(size: 15, weight: .semibold))
+                            .foregroundStyle(.white)
+                    }
+                    Text("Sign Out")
+                        .foregroundStyle(.red)
+                    Spacer()
+                    Text(settings.loggedInEmail)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
                 }
             }
         }

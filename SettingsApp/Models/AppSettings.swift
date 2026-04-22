@@ -166,6 +166,9 @@ class AppSettings: ObservableObject {
         didSet { UserDefaults.standard.set(isDataSaverEnabled, forKey: "data_saver") }
     }
 
+    @Published var loggedInEmail: String = ""
+    @Published var isLoggedIn: Bool = false
+
     let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
     let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
 
@@ -188,6 +191,11 @@ class AppSettings: ObservableObject {
         self.isLocationEnabled     = ud.object(forKey: "location")       as? Bool ?? false
         self.isAutoUpdateEnabled   = ud.object(forKey: "auto_update")    as? Bool ?? true
         self.isDataSaverEnabled    = ud.object(forKey: "data_saver")     as? Bool ?? false
+    }
+
+    func logout() {
+        loggedInEmail = ""
+        isLoggedIn = false
     }
 
     func resetToDefaults() {
