@@ -1,0 +1,15 @@
+{
+  "originHash" : "47ff9d428650e44bbdaddc0aefa7ac9605b6a1afc31050a4d0065e68d2b81b47",
+  "pins" : [
+    {
+      "identity" : "login",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shah-pratik-einfochips/login",
+      "state" : {
+        "branch" : "main",
+        "revision" : "18cbe44974c727d2300564642fb102da322835f8"
+      }
+    }
+  ],
+  "version" : 3
+}

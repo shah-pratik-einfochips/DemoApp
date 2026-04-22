@@ -19,6 +19,7 @@
 		AAAAAA000000000000002010 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAAA000000000000001010 /* LanguageView.swift */; };
 		AAAAAA000000000000002011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAAAA000000000000001011 /* Assets.xcassets */; };
 		AAAAAA000000000000002012 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAAAA000000000000001012 /* Preview Assets.xcassets */; };
+		AAAAAA000000000000002013 /* LoginKit in Frameworks */ = {isa = PBXBuildFile; productRef = AAAAAA000000000000007002 /* LoginKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAAAAA000000000000002013 /* LoginKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +126,9 @@
 			);
 			dependencies = (
 			);
+			packageProductDependencies = (
+				AAAAAA000000000000007002 /* LoginKit */,
+			);
 			name = SettingsApp;
 			productName = SettingsApp;
 			productReference = AAAAAA000000000000000003 /* SettingsApp.app */;
@@ -153,6 +158,9 @@
 				Base,
 			);
 			mainGroup = AAAAAA000000000000003001;
+			packageReferences = (
+				AAAAAA000000000000007001 /* XCRemoteSwiftPackageReference "login" */,
+			);
 			productRefGroup = AAAAAA000000000000003006 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -382,6 +390,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AAAAAA000000000000007001 /* XCRemoteSwiftPackageReference "login" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shah-pratik-einfochips/login";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AAAAAA000000000000007002 /* LoginKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAAAAA000000000000007001 /* XCRemoteSwiftPackageReference "login" */;
+			productName = LoginKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 	};
 	rootObject = AAAAAA000000000000000001 /* Project object */;
