@@ -20,6 +20,9 @@
 		AAAAAA000000000000002011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAAAA000000000000001011 /* Assets.xcassets */; };
 		AAAAAA000000000000002012 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAAAAA000000000000001012 /* Preview Assets.xcassets */; };
 		AAAAAA000000000000002013 /* LoginKit in Frameworks */ = {isa = PBXBuildFile; productRef = AAAAAA000000000000007002 /* LoginKit */; };
+	AAAAAA000000000000002014 /* AppSettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAAA000000000000001014 /* AppSettingsTests.swift */; };
+	AAAAAA000000000000002015 /* LoginModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAAAA000000000000001015 /* LoginModuleTests.swift */; };
+	AAAAAA000000000000002016 /* LoginKit in Frameworks */ = {isa = PBXBuildFile; productRef = AAAAAA000000000000007003 /* LoginKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		AAAAAA000000000000001011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAAAAA000000000000001012 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AAAAAA000000000000001013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+	AAAAAA000000000000000005 /* SettingsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SettingsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+	AAAAAA000000000000001014 /* AppSettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsTests.swift; sourceTree = "<group>"; };
+	AAAAAA000000000000001015 /* LoginModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModuleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +54,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AAAAAA000000000000004005 /* Frameworks (Tests) */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAAAAA000000000000002016 /* LoginKit in Frameworks (Tests) */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				AAAAAA000000000000003002 /* SettingsApp */,
+				AAAAAA000000000000003007 /* SettingsAppTests */,
 				AAAAAA000000000000003006 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,8 +122,18 @@
 			isa = PBXGroup;
 			children = (
 				AAAAAA000000000000000003 /* SettingsApp.app */,
+				AAAAAA000000000000000005 /* SettingsAppTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AAAAAA000000000000003007 /* SettingsAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				AAAAAA000000000000001014 /* AppSettingsTests.swift */,
+				AAAAAA000000000000001015 /* LoginModuleTests.swift */,
+			);
+			path = SettingsAppTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +158,26 @@
 			productName = SettingsApp;
 			productReference = AAAAAA000000000000000003 /* SettingsApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		AAAAAA000000000000000004 /* SettingsAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAAAAA000000000000006003 /* Build configuration list for PBXNativeTarget "SettingsAppTests" */;
+			buildPhases = (
+				AAAAAA000000000000004004 /* Sources */,
+				AAAAAA000000000000004005 /* Frameworks (Tests) */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAAAAA000000000000008001 /* PBXTargetDependency */,
+			);
+			packageProductDependencies = (
+				AAAAAA000000000000007003 /* LoginKit */,
+			);
+			name = SettingsAppTests;
+			productName = SettingsAppTests;
+			productReference = AAAAAA000000000000000005 /* SettingsAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -197,6 +242,15 @@
 				AAAAAA000000000000002008 /* AboutView.swift in Sources */,
 				AAAAAA000000000000002009 /* PrivacyView.swift in Sources */,
 				AAAAAA000000000000002010 /* LanguageView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAAAAA000000000000004004 /* Sources (Tests) */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAAAAA000000000000002014 /* AppSettingsTests.swift in Sources */,
+				AAAAAA000000000000002015 /* LoginModuleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +422,42 @@
 			};
 			name = Release;
 		};
+		AAAAAA000000000000005005 /* Debug (Tests) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demo.SettingsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SettingsApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SettingsApp";
+			};
+			name = Debug;
+		};
+		AAAAAA000000000000005006 /* Release (Tests) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.demo.SettingsAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SettingsApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SettingsApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -389,7 +479,34 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		AAAAAA000000000000006003 /* Build configuration list for PBXNativeTarget "SettingsAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAAAAA000000000000005005 /* Debug */,
+				AAAAAA000000000000005006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin PBXContainerItemProxy section */
+		AAAAAA000000000000008002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAAAAA000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AAAAAA000000000000000002;
+			remoteInfo = SettingsApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXTargetDependency section */
+		AAAAAA000000000000008001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AAAAAA000000000000000002 /* SettingsApp */;
+			targetProxy = AAAAAA000000000000008002 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		AAAAAA000000000000007001 /* XCRemoteSwiftPackageReference "login" */ = {
@@ -404,6 +521,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		AAAAAA000000000000007002 /* LoginKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AAAAAA000000000000007001 /* XCRemoteSwiftPackageReference "login" */;
+			productName = LoginKit;
+		};
+		AAAAAA000000000000007003 /* LoginKit (Tests) */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AAAAAA000000000000007001 /* XCRemoteSwiftPackageReference "login" */;
 			productName = LoginKit;
