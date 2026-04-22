@@ -192,6 +192,10 @@
 					AAAAAA000000000000000002 = {
 						CreatedOnToolsVersion = 15.0;
 					};
+					AAAAAA000000000000000004 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = AAAAAA000000000000000002;
+					};
 				};
 			};
 			buildConfigurationList = AAAAAA000000000000006001 /* Build configuration list for PBXProject "SettingsApp" */;
@@ -211,6 +215,7 @@
 			projectRoot = "";
 			targets = (
 				AAAAAA000000000000000002 /* SettingsApp */,
+				AAAAAA000000000000000004 /* SettingsAppTests */,
 			);
 		};
 /* End PBXProject section */
